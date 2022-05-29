@@ -1,60 +1,77 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
 
-  <link rel="stylesheet" href="../lib/bootstrap-3.3.7/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="/libs/bootstrap-3.3.7/css/bootstrap.min.css">
   <style>
-    .row > div {
+    .row>div {
       height: 40px;
       border: 1px solid #CCC;
     }
   </style>
 </head>
+
 <body>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-1"></div>
-    <div class="col-md-1"></div>
-    <div class="col-md-1"></div>
-    <div class="col-md-1"></div>
-    <div class="col-md-1"></div>
-    <div class="col-md-1"></div>
-    <div class="col-md-1"></div>
-    <div class="col-md-1"></div>
-    <div class="col-md-1"></div>
-    <div class="col-md-1"></div>
-    <div class="col-md-1"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-2"></div>
-    <div class="col-md-2"></div>
-    <div class="col-md-2"></div>
-    <div class="col-md-2"></div>
-    <div class="col-md-2"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-3"></div>
-    <div class="col-md-3"></div>
-    <div class="col-md-3"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4"></div>
-    <div class="col-md-4"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-6"></div>
-    <div class="col-md-6"></div>
-  </div>
-</div>
 
-<script src="../lib/jquery-1.10.2.js"></script>
-<script src="../lib/bootstrap-3.3.7/js/bootstrap.min.js" ></script>
+  <!--
+    当要进行布局的时候，在外面套一个有container类名的元素
+    bootstrap会对这个类名里面的元素进行处理
+
+    row：一行，一行默认有12列
+    col：列
+    col-设备说明-列宽
+
+    自动 超小屏幕(手机)：col-xs-
+    750px 小屏幕(平板): col-sm-
+    970px 中等屏幕(普通电脑显示器): col-md-
+    1170px 大屏幕：col-lg-
+   -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1 col-sm-6"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-3"></div>
+      <div class="col-md-3"></div>
+      <div class="col-md-3"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-6"></div>
+      <div class="col-md-6"></div>
+    </div>
+  </div>
+
+  <script src="https://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+  <script src="/libs/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 </body>
+
 </html>
