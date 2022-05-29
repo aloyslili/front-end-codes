@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://www.jq22.com/jquery/vue2.6.10.min.js"></script>
+  <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/vuex/3.6.2/vuex.js" type="application/javascript"></script>
+</head>
+
+<body>
+  <div id="app">
+    <button @click="start">开启</button>
+    <button @click="stop">关闭</button>
+  </div>
+
+  <script>
+
+    // 创建一个管理状态的 store对象 (Vuex.Store)
+    const store = new Vuex.Store({
+      state: {
+        timerId: null, // 定义一个定时器id状态
+      },
+      mutations: {
+        setTimerId(state, val) {
+          state.timerId = val;
+        }
+      },
+      actions: {
+        startTimer({commit}, {func, step}) {
+          let id = setInterval(func, step);
+          commit('setTimerId', id)
+        },
+        stopTimer({commit, state}) {
+          clearInterval(state.timerId);
+          commit('setTimerId', null)
+        }
+      }
+    });
+
+    let vm = new Vue({
+      el: '#app',
+      store, // 将Vuex对象挂载到Vue实例上
+      methods: {
+        start() {
+          this.$store.dispatch('startTimer', {
+            func: () => console.log('你好啊'),
+            step: 1000
+          })
+        },
+        stop() {
+          this.$store.dispatch('stopTimer')
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
