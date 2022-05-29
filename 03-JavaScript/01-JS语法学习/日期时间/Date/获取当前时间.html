@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://www.jq22.com/jquery/jquery-3.3.1.js"></script>
+</head>
+<body>
+
+  <h1 id="time-show"></h1>
+  <button id="btn-start">开始计时</button>
+
+<script>
+
+  let time1, time2;
+  let status = false;
+  let timerId; // 存储定时器id
+
+  $('#btn-start').click(function() {
+    if(status) {
+      time2 = Date.now();
+      console.log("停止计时, timestamp=", time2);
+      let duration = time2 - time1; // 开始时间减去结束时间，等于经过的时长
+      console.log('时长=', duration, '毫秒');
+      $(this).html("开始计时");
+      // 停止计时的时候，清理定时器
+      clearInterval(timerId);
+      // 时间归零
+      time1 = null;
+      time2 = null;
+      // $("#time-show").html("");
+    } else {
+      time1 = Date.now(); // 获取当前时间戳
+      console.log("开始计时, timestamp=", time1);
+      $(this).html("停止计时");
+      // 开始计时的时候，打开一个定时器，不断刷新时长
+      timerId = setInterval(function() {
+        time2 = Date.now();
+        $("#time-show").html(`${time2 - time1} 毫秒`)
+      }, 1);
+    }
+    status = !status;
+  })
+
+</script>
+</body>
+</html>

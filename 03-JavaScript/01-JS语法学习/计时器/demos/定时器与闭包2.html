@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://www.jq22.com/jquery/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+  <button id="btn">按钮</button>
+  <button id="btn-stop">停止</button>
+
+  <script>
+
+    let timer = createTimer(() => {
+      console.log('你好');
+    }, 100)
+
+    $(() => {
+      $('#btn').click(() => {
+        timer.start();
+      });
+      $('#btn-stop').click(() => {
+        timer.stop();
+      });
+    })
+
+    // 创建一个定时器
+    function createTimer(func, step) {
+      let timerId = null;
+      return {
+        start: function () {
+          if(timerId) {
+            alert("有正在运行的计时器，请不要重复开启")
+            return;
+          }
+          timerId = setInterval(func, step);
+        },
+        stop: function () {
+          if(!timerId) {
+            alert('没有可关闭的计时器');
+            return;
+          }
+          clearInterval(timerId);
+          timerId = null;
+        }
+      }
+    }
+
+  </script>
+</body>
+
+</html>
