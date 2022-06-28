@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* .box + li {
+      color: red;
+    } */
+
+
+    .li + li {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    相邻兄弟选择符加号（+）
+    只能选择后面的一个兄弟
+    相邻兄弟节点可以用first-child的效果表示
+   -->
+
+   <ul class="box">
+    <li class="li">1</li>
+    <li>2</li>
+    <li>3</li>
+   </ul>
+</body>
+</html>

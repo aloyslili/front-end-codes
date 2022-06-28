@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* .box > div{
+      color: red;
+    } */
+
+    .box div {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    子选择器只匹配第一代子元素(>)，而后代选择器匹配所有子选择器
+
+    适用场景：
+    1、状态类名控制，类名进行状态切换，会遇到祖先和后代都会存在切换的场景
+    2、标签受限，当标签重复时进行精确的控制
+    3、层级位置与动态判断
+   -->
+
+   <div class="box">
+    <div>java</div>
+    <div>c++</div>
+    <div>python</div>
+   </div>
+</body>
+</html>
